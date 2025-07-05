@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-4">
+  <div class="calculator bg-white rounded-2xl overflow-hidden w-full max-w-md">
+    
+    <!-- Display -->
+    <div class="display bg-gray-900 p-4 text-right text-white">
+      <div id="previous-operand" class="text-gray-400 text-lg h-6 overflow-x-auto whitespace-nowrap"></div>
+      <div id="current-operand" class="text-3xl font-semibold mt-2 overflow-x-auto whitespace-nowrap">0</div>
+    </div>
+    
+    <!-- Buttons -->
+    <div class="grid grid-cols-4 gap-1 p-2 bg-gray-100">
+      <!-- Row 1 -->
+      <button class="function-btn btn" data-action="clear"><i class="fas fa-eraser"></i></button>
+      <button class="function-btn btn" data-action="delete"><i class="fas fa-backspace"></i></button>
+      <button class="function-btn btn" data-action="percentage">%</button>
+      <button class="operator-btn btn" data-action="divide"><i class="fas fa-divide"></i></button>
+
+      <!-- Row 2 -->
+      <button class="number-btn btn" data-number="7">7</button>
+      <button class="number-btn btn" data-number="8">8</button>
+      <button class="number-btn btn" data-number="9">9</button>
+      <button class="operator-btn btn" data-action="multiply"><i class="fas fa-times"></i></button>
+
+      <!-- Row 3 -->
+      <button class="number-btn btn" data-number="4">4</button>
+      <button class="number-btn btn" data-number="5">5</button>
+      <button class="number-btn btn" data-number="6">6</button>
+      <button class="operator-btn btn" data-action="subtract"><i class="fas fa-minus"></i></button>
+
+      <!-- Row 4 -->
+      <button class="number-btn btn" data-number="1">1</button>
+      <button class="number-btn btn" data-number="2">2</button>
+      <button class="number-btn btn" data-number="3">3</button>
+      <button class="operator-btn btn" data-action="add"><i class="fas fa-plus"></i></button>
+
+      <!-- Row 5 -->
+      <button class="number-btn btn col-span-2" data-number="0">0</button>
+      <button class="number-btn btn" data-action="decimal">.</button>
+      <button class="equals-btn btn" data-action="equals"><i class="fas fa-equals"></i></button>
+    </div>
+
+    <!-- Memory Functions -->
+    <div id="memory-functions" class="grid grid-cols-4 gap-1 p-2 bg-gray-100 hidden">
+      <button class="function-btn btn text-sm" data-action="memory-clear">MC</button>
+      <button class="function-btn btn text-sm" data-action="memory-recall">MR</button>
+      <button class="function-btn btn text-sm" data-action="memory-add">M+</button>
+      <button class="function-btn btn text-sm" data-action="memory-subtract">M-</button>
+    </div>
+
+    <!-- Toggle Button -->
+    <div class="bg-gray-100 p-2 text-center">
+      <button id="advanced-toggle" class="text-gray-600 hover:text-gray-900 text-sm font-medium">
+        <i class="fas fa-calculator mr-1"></i> Advanced Functions
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
